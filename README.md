@@ -1,2 +1,2 @@
 # Desenvolvimento-BackEnd
- Sistema de cadastro de alunos de alguma escola
+ Sistema de cadastro de matriculas a alunos de uma escola
