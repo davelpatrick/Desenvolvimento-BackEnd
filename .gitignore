@@ -1,0 +1,9 @@
+# Ignore visual Studio code settings
+.vscode/
+
+# Ignore HTML folder
+.html/
+
+# Ignore logs and temporay files
+*.log
+*.temp
