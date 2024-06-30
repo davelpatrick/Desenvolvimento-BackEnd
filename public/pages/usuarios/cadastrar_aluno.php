@@ -2,8 +2,6 @@
 
 define('DB_PATH', '/var/www/database/bd.txt');
 
-require '/var/www/app/views/usuarios/cadastrar_aluno.phtml';
-
 $method = $_SERVER['REQUEST_METHOD'];
 $erro = '';
 $mensagem = '';
@@ -18,8 +16,8 @@ if ($method === 'POST') {
 
         if (file_put_contents(DB_PATH, $line, FILE_APPEND)) {
             $mensagem = "Aluno cadastrado com sucesso!";
-
-            //header('Location: /pages/usuarios/gerenciador_alunos.php)
+            header('Location: /pages/usuarios/diretor.php');
+            exit;
         } else {
             $erro = "Erro ao cadastrar o aluno.";
         }
@@ -28,4 +26,5 @@ if ($method === 'POST') {
     }
 }
 
+require '/var/www/app/views/usuarios/cadastrar_aluno.phtml';
 ?>
