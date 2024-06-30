@@ -1,3 +1,4 @@
+<!-- login.phtml -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/assets/css/application.css">
+</head>
+<body>
+    <div class="login-container">
+        <header class="mb3">
+            <h1><?= $title ?></h1>
+        </header>
+        <h3>Sistema de Matrículas</h3>
+        <form action="/public/pages/login/login.php"  method="post">
+            <label for="type">Tipo:</label>
+            <select id="type" name="type" onchange="updateFormFields()">
+                <option value="server">Servidor</option>
+                <option value="student">Aluno</option>
+            </select><br><br>
+
+            <div id="dynamic-fields"></div>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="password-field" required><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
     <script>
         function updateFormFields() {
             const userType = document.getElementById('type').value;
@@ -27,32 +51,6 @@
                 `;
             }
         }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            updateFormFields(); // Update fields on page load
-        });
     </script>
-</head>
-<body>
-    <div class="login-container">
-        <header class="mb3">
-            <h1><?= $title ?></h1>
-        </header>
-        <h3>Sistema de Matrículas</h3>
-        <form action="processa_login.php" method="post">
-            <label for="type">Tipo:</label>
-            <select id="type" name="type" onchange="updateFormFields()">
-                <option value="server">Servidor</option>
-                <option value="student">Aluno</option>
-            </select><br><br>
-
-            <div id="dynamic-fields"></div>
-            
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" class="password-field" required><br><br>
-            
-            <input type="submit" value="Login">
-        </form>
-    </div>
 </body>
 </html>
