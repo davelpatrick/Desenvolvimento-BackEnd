@@ -12,12 +12,12 @@ if ($method === 'POST') {
         $email = $_POST["email"];
         $data_nascimento = $_POST["data_nascimento"];
 
-        $line = $name . '|' . $email . '|' . $data_nascimento . PHP_EOL;
+        $id = uniqid();
+
+        $line = $id . '|' . $name . '|' . $email . '|' . $data_nascimento . PHP_EOL;
 
         if (file_put_contents(DB_PATH, $line, FILE_APPEND)) {
-            $mensagem = "Aluno cadastrado com sucesso!";
-            header('Location: /pages/usuarios/diretor.php');
-            exit;
+            header('Location: diretor.php');
         } else {
             $erro = "Erro ao cadastrar o aluno.";
         }
@@ -27,4 +27,5 @@ if ($method === 'POST') {
 }
 
 require '/var/www/app/views/usuarios/cadastrar_aluno.phtml';
+
 ?>
