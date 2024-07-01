@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+}
+
+.aluno-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.aluno-table th,
+.aluno-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.aluno-table th {
+    background-color: #f2f2f2;
+}
+
+.aluno-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.aluno-table tr:hover {
+    background-color: #ddd;
+}
+
+.action-link {
+    color: blue;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    color: red;
+}
