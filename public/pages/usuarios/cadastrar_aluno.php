@@ -1,23 +1,19 @@
 <?php
 
-define('DB_PATH', '/var/www/database/bd.txt');
+require_once '/var/www/app/Models/Diretor.php';
 
-$method = $_SERVER['REQUEST_METHOD'];
+$diretor = new Diretor();
 $erro = '';
-$mensagem = '';
 
-if ($method === 'POST') {
-    if (isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["data_nascimento"])) {
-        $name = $_POST["nome"];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST["nome"], $_POST["email"], $_POST["data_nascimento"])) {
+        $nome = $_POST["nome"];
         $email = $_POST["email"];
-        $data_nascimento = $_POST["data_nascimento"];
+        $dataNascimento = $_POST["data_nascimento"];
 
-        $id = uniqid();
-
-        $line = $id . '|' . $name . '|' . $email . '|' . $data_nascimento . PHP_EOL;
-
-        if (file_put_contents(DB_PATH, $line, FILE_APPEND)) {
+        if ($diretor->cadastrarAluno($nome, $email, $dataNascimento)) {
             header('Location: diretor.php');
+            exit;
         } else {
             $erro = "Erro ao cadastrar o aluno.";
         }
