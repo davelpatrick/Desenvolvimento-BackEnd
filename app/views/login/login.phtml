@@ -1,4 +1,3 @@
-<!-- login.phtml -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +12,7 @@
             <h1><?= $title ?></h1>
         </header>
         <h3>Sistema de Matrículas</h3>
-        <form action="/public/pages/login/login.php"  method="post">
+        <form action="/public/pages/login/login.php" method="post">
             <label for="type">Tipo:</label>
             <select id="type" name="type" onchange="updateFormFields()">
                 <option value="server">Servidor</option>
@@ -51,6 +50,9 @@
                 `;
             }
         }
+
+        // Chamar a função ao carregar a página para definir os campos corretamente com base no valor inicial do tipo
+        window.onload = updateFormFields;
     </script>
 </body>
 </html>
