@@ -1,67 +1,65 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo para visualização */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 400px; /* Largura reduzida para melhor visualização em um exemplo */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    text-align: center; /* Centraliza o conteúdo dentro da div */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito visual */
 }
 
-h1 {
-    text-align: center;
+.titulo-principal {
+    color: orange; /* Cor laranja para o título principal */
 }
 
-.aluno-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.subtitulo {
+    color: black; /* Cor preta para os subtítulos */
+    margin-top: 10px; /* Espaçamento entre os subtítulos */
 }
 
-.aluno-table th,
-.aluno-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+form {
+    margin-top: 20px; /* Espaçamento superior para o formulário */
+    text-align: left; /* Alinha o texto do formulário à esquerda */
 }
 
-.aluno-table th {
-    background-color: #f2f2f2;
+label {
+    display: block; /* Faz com que as labels ocupem uma linha inteira */
+    margin-bottom: 8px; /* Espaçamento inferior entre as labels */
 }
 
-.aluno-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="submit"] {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 8px; /* Espaçamento interno dos campos de entrada */
+    margin-bottom: 12px; /* Espaçamento inferior entre os campos de entrada */
+    border: 1px solid #ccc; /* Borda dos campos de entrada */
+    border-radius: 4px; /* Borda arredondada dos campos de entrada */
+    box-sizing: border-box; /* Garante que o padding não altere a largura total */
 }
 
-.aluno-table tr:hover {
-    background-color: #ddd;
+input[type="submit"] {
+    background-color: rgb(235, 160, 21); /* Cor de fundo do botão de submit */
+    color: #fff; /* Cor do texto do botão de submit */
+    border: none; /* Remove a borda do botão de submit */
+    cursor: pointer; /* Altera o cursor ao passar sobre o botão de submit */
 }
 
-.action-link {
-    color: blue;
-    text-decoration: none;
-    margin-right: 10px;
+input[type="submit"]:hover {
+    background-color: orange; /* Cor de fundo do botão de submit ao passar o mouse */
 }
 
-.action-link:hover {
-    text-decoration: underline;
-}
-
-.delete-form {
-    display: inline;
-}
-
-.action-button {
-    background: none;
-    border: none;
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.action-button:hover {
-    color: red;
+p {
+    margin-top: 10px; /* Espaçamento superior para o parágrafo de erro */
 }
